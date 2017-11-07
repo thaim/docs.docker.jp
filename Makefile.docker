@@ -23,12 +23,13 @@ help: ## show this help.
 clean: ## to remove generated files
 	-rm -rf $(BUILDDIR)/*
 
-prepare: ## to prepare docker image for build with sphinx
-	@docker build -t docsdockerjp/latex .
-
-html: prepare ## to make standalone HTML files
-	@docker run --rm -v `pwd`:/mnt docsdockerjp/latex make -f Makefile.docker clean html
+html: ## to make standalone HTML files
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	@echo
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 latexpdfja: ## to make pdf files
-	@grep -r '–' . | cut -d : -f 1 | grep -v Makefile | grep -v README.md | sort | uniq | xargs -I%% perl -pi -e 's/–/--/g' "%%"
-	@docker run --rm -v `pwd`:/mnt docsdockerjp/latex make -f Makefile.docker clean latexpdfja
+	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	@echo "Running LaTeX files through platex and dvipdfmx..."
+	$(MAKE) -C $(BUILDDIR)/latex all-pdf-ja
+	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
