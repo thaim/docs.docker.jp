@@ -33,5 +33,5 @@ serve: ## to serve on nginx
 	docker run -it -d --name "docs.docker.jp" -v "${PWD}/$(BUILDDIR)/html:/usr/share/nginx/html/" -p "80:80" nginx
 
 latexpdfja: ## to make pdf files
-	@grep -r '–' . | cut -d : -f 1 | grep -v Makefile | grep -v README.md | sort | uniq | xargs -I%% perl -pi -e 's/–/--/g' "%%"
+	@grep -r '–' . | cut -d : -f 1 | grep -v -e Makefile -e README.md | sort | uniq | xargs -I%% perl -pi -e 's/–/--/g' "%%"
 	@docker run --rm -v `pwd`:/mnt docsdockerjp/latex make -f Makefile.docker clean latexpdfja
