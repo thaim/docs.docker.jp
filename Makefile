@@ -16,20 +16,22 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: help clean html latexpdfja
 
-help:
-	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  html       to make standalone HTML files"
+help: ## show this help.
+	@echo "Please use \`make <target>' where <target> is one of\n"
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {sub("\\\\n",sprintf("\n%22c"," "), $$2);printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-clean:
+clean: ## to remove generated files
 	-rm -rf $(BUILDDIR)/*
 
-html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+prepare: ## to prepare docker image for build with sphinx
+	@docker build -t docsdockerjp/latex .
 
-latexpdfja:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo "Running LaTeX files through platex and dvipdfmx..."
-	$(MAKE) -C $(BUILDDIR)/latex all-pdf-ja
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+html: prepare ## to make standalone HTML files
+	@docker run --rm -v `pwd`:/mnt docsdockerjp/latex make -f Makefile.docker clean html
+
+latexpdfja: ## to make pdf files
+	@grep -r '–' . | cut -d : -f 1 | grep -v -e Makefile -e README.md | sort | uniq | xargs -I%% perl -pi -e 's/–/--/g' "%%"
+	@docker run --rm -v `pwd`:/mnt docsdockerjp/latex make -f Makefile.docker clean latexpdfja
+
+serve: ## to serve on nginx
+	docker run -it -d --name "docs.docker.jp" -v "$(PWD)/$(BUILDDIR)/html:/usr/share/nginx/html/" -p "80:80" nginx
