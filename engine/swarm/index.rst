@@ -165,13 +165,13 @@ swarm モード CLI コマンド
 
 * :doc:`swarm init </engine/reference/commandline/swarm_init>`
 * :doc:`swarm join </engine/reference/commandline/swarm_join>`
-* :doc:`swarm create </engine/reference/commandline/swarm_create>`
-* :doc:`swarm inspect</engine/reference/commandline/swarm_inspect>`
-* :doc:`swarm ls</engine/reference/commandline/swarm_ls>`
-* :doc:`swarm rm</engine/reference/commandline/swarm_rm>`
-* :doc:`swarm scale</engine/reference/commandline/swarm_scale>`
-* :doc:`swarm ps</engine/reference/commandline/swarm_ps>`
-* :doc:`swarm update</engine/reference/commandline/swarm_update>`
+* :doc:`swarm create </engine/reference/commandline/service_create>`
+* :doc:`swarm inspect</engine/reference/commandline/service_inspect>`
+* :doc:`swarm ls</engine/reference/commandline/service_ls>`
+* :doc:`swarm rm</engine/reference/commandline/service_rm>`
+* :doc:`swarm scale</engine/reference/commandline/service_scale>`
+* :doc:`swarm ps</engine/reference/commandline/service_ps>`
+* :doc:`swarm update</engine/reference/commandline/service_update>`
 
 
 .. seealso::
