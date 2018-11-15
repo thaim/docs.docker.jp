@@ -20,6 +20,8 @@ Part 4：Swarm
 
 .. Prerequisites
 
+.. _get-started-part4-swarms-prerequisites:
+
 必要条件
 ==========
 
