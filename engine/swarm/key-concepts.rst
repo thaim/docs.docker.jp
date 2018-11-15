@@ -39,7 +39,7 @@ swarm とは何か？
    directly within Docker.
 
 クラスタ管理とオーケストレーション機能は、 Docker Engine に組み込まれた（内蔵された）もので、
-** `SwarmKit <https://github.com/docker/swarmkit/>`_ ** を使って実現しています。
+`SwarmKit <https://github.com/docker/swarmkit/>`_ を使って実現しています。
 SwarmKit は Docker のオーケストレーションレイヤを実装するための独立したプロジェクトで、
 Docker 内から直接呼び出されます。
 
