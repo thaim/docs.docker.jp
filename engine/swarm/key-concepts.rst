@@ -56,7 +56,7 @@ Docker 内から直接呼び出されます。
    manager, as opposed to a standalone container.
 
 複数の Docker ホストで構成する swarm は **swarm mode** で動作し、
-マネージャ(メンバとデリゲーションを管理)とワーカ( :ref:`swarm サービス <swarm-ceoncepts-services-and-tasks>` を実行)
+マネージャ(メンバとデリゲーションを管理)とワーカ( :ref:`swarm サービス <swarm-concepts-services-and-tasks>` を実行)
 として動作します。 Docker ホストはマネージャとしてもワーカとしても両方のロールとして
 動作する可能性がある。サービスを作成したとき、その期待する状態(レプリカ数や利用可能なネットワークと
 ストレージリソース、サービスが世の中に公開するポート番号など)を指定する。
@@ -93,7 +93,7 @@ Docker デーモンは swarm にマネージャとしてもワーカとしても
    containers, you can define and run swarm service
    [stacks](/get-started/part5.md).
 
-:doc:`Docker Compose </compose/>` を定義し実行するのと同じ方法で
+:doc:`Docker Compose </compose/index>` を定義し実行するのと同じ方法で
 swarm サービス :doc:`stack </get-started/part5>` を定義し実行することができる。
 
 .. Keep reading for details about concepts relating to Docker swarm services,
@@ -146,7 +146,7 @@ Docker swarm サービスに関連するコンセプトとしてノードやサ�
 
 .. Services and tasks
 
-.. _swarm-concept-services-and-tasks:
+.. _swarm-concepts-services-and-tasks:
 
 サービスとタスク
 ====================
