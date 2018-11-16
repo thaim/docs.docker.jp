@@ -40,9 +40,9 @@ swarm （群れ）の作成
    もし Docker Machine を利用しているのであれば、以下のコマンドを実行して
    SSH で接続することができます。
 
-.. code-block::
+   .. code-block:: bash
 
-   $ docker-machine ssh manager1
+      $ docker-machine ssh manager1
 
 .. 2.  Run the following command to create a new swarm:
 
@@ -51,106 +51,106 @@ swarm （群れ）の作成
 
 2. 新しい swarm を作成するために、次のコマンドを実行します。
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   docker swarm init --listen-addr <MANAGER-IP>
+      docker swarm init --listen-addr <MANAGER-IP>
 
-.. >**Note**: If you are using Docker for Mac or Docker for Windows to test
-   single-node swarm, simply run `docker swarm init` with no arguments. There is no
-   need to specify `--advertise-addr` in this case. To learn more, see the topic
-   on how to [Use Docker for Mac or Docker for
-   Windows](/engine/swarm/swarm-tutorial/index.md#use-docker-for-mac-or-docker-for-windows) with Swarm.
+   .. >**Note**: If you are using Docker for Mac or Docker for Windows to test
+      single-node swarm, simply run `docker swarm init` with no arguments. There is no
+      need to specify `--advertise-addr` in this case. To learn more, see the topic
+      on how to [Use Docker for Mac or Docker for
+      Windows](/engine/swarm/swarm-tutorial/index.md#use-docker-for-mac-or-docker-for-windows) with Swarm.
 
-.. note::
+   .. note::
 
-   シングルノード swarm を試すために Docker for Mac や Docker for Windows を利用しているのであれば、
-   単に ``docker swarm init`` を引数なしで実行してください。その場合は ``--advertise-addr`` を指定
-   する必要はありません。より詳細を確認するためには、 Swarm における
-   :ref:`Docker for Mac や Docker for Windows を利用する <use-docker-for-mac-or-docker-for-windows>`
-   を参照してください。
+      シングルノード swarm を試すために Docker for Mac や Docker for Windows を利用しているのであれば、
+      単に ``docker swarm init`` を引数なしで実行してください。その場合は ``--advertise-addr`` を指定
+      する必要はありません。より詳細を確認するためには、 Swarm における
+      :ref:`Docker for Mac や Docker for Windows を利用する <use-docker-for-mac-or-docker-for-windows>`
+      を参照してください。
 
-..     In the tutorial, the following command creates a swarm on the `manager1`
-       machine:
+   .. In the tutorial, the following command creates a swarm on the `manager1`
+      machine:
 
-このチュートリアルでは、 ``manager1`` マシン上で次の swarm 作成コマンドを実行します。
+   このチュートリアルでは、 ``manager1`` マシン上で次の swarm 作成コマンドを実行します。
 
-..     ```bash
-       $ docker swarm init --advertise-addr 192.168.99.100
-       Swarm initialized: current node (dxn1zf6l61qsb1josjja83ngz) is now a manager.
+   .. ```bash
+      $ docker swarm init --advertise-addr 192.168.99.100
+      Swarm initialized: current node (dxn1zf6l61qsb1josjja83ngz) is now a manager.
 
-       To add a worker to this swarm, run the following command:
+      To add a worker to this swarm, run the following command:
 
-           docker swarm join \
-           --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
-           192.168.99.100:2377
+          docker swarm join \
+          --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
+          192.168.99.100:2377
 
-       To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
-       ```
+      To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+      ```
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   $ docker swarm init --listen-addr 192.168.99.100
-   Swarm initialized: current node (dxn1zf6l61qsb1josjja83ngz) is now a manager.
+      $ docker swarm init --listen-addr 192.168.99.100
+      Swarm initialized: current node (dxn1zf6l61qsb1josjja83ngz) is now a manager.
 
-   To add a worker to this swarm, run the following command:
+      To add a worker to this swarm, run the following command:
 
-       docker swarm join \
-       --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
-       192.168.99.100:2377
+          docker swarm join \
+          --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
+          192.168.99.100:2377
 
-   To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+      To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 
 
-..  The `--advertise-addr` flag configures the manager node to publish its
-    address as `192.168.99.100`. The other nodes in the swarm must be able
-    to access the manager at the IP address.
+   .. The `--advertise-addr` flag configures the manager node to publish its
+      address as `192.168.99.100`. The other nodes in the swarm must be able
+      to access the manager at the IP address.
 
-``--listen-addr`` フラグは、マネージャ・ノードでアドレス ``192.168.99.100`` を公開する設定です。
-swarm における他のノードは、この IP アドレスでマネージャに接続できます。
+   ``--listen-addr`` フラグは、マネージャ・ノードでアドレス ``192.168.99.100`` を公開する設定です。
+   swarm における他のノードは、この IP アドレスでマネージャに接続できます。
 
-..  The output includes the commands to join new nodes to the swarm. Nodes will
-    join as managers or workers depending on the value for the `--token`
-    flag.
+   .. The output includes the commands to join new nodes to the swarm. Nodes will
+      join as managers or workers depending on the value for the `--token`
+      flag.
 
-出力結果は新しいノードを swarm に参加させるコマンドを示しています。
-``--token`` フラグの値によって、ノードはマネージャまたはノードとして参加します。
+   出力結果は新しいノードを swarm に参加させるコマンドを示しています。
+   ``--token`` フラグの値によって、ノードはマネージャまたはノードとして参加します。
 
 
 .. 2.  Run `docker info` to view the current state of the swarm:
 
-       ```bash
-       $ docker info
+   ```bash
+   $ docker info
 
-       Containers: 2
-       Running: 0
-       Paused: 0
-       Stopped: 2
-         ...snip...
-       Swarm: active
-         NodeID: dxn1zf6l61qsb1josjja83ngz
-         Is Manager: true
-         Managers: 1
-         Nodes: 1
-         ...snip...
-       ```
+   Containers: 2
+    Running: 0
+    Paused: 0
+    Stopped: 2
+   ...snip...
+   Swarm: active
+    NodeID: dxn1zf6l61qsb1josjja83ngz
+    Is Manager: true
+    Managers: 1
+    Nodes: 1
+   ...snip...
+   ```
 
 3. ``docker info`` を実行し、現在の swarm の状況を表示します：
 
-.. code-block:: bash
+   .. code-block:: bash
 
-    $ docker info
+      $ docker info
 
-    Containers: 2
-     Running: 0
-     Paused: 0
-     Stopped: 2
-    ...省略...
-    Swarm: active
-     NodeID: dxn1zf6l61qsb1josjja83ngz
-     Is Manager: true
-     Managers: 1
-     Nodes: 1
-    ...省略...
+      Containers: 2
+       Running: 0
+       Paused: 0
+       Stopped: 2
+      ...省略...
+      Swarm: active
+       NodeID: dxn1zf6l61qsb1josjja83ngz
+       Is Manager: true
+       Managers: 1
+       Nodes: 1
+      ...省略...
 
 .. 3.  Run the `docker node ls` command to view information about nodes:
 
@@ -164,23 +164,23 @@ swarm における他のノードは、この IP アドレスでマネージャ�
 
 4. ``docker node ls`` コマンドを実行し、ノードに関する情報を表示します。
 
-.. code-block:: bash
+   .. code-block:: bash
 
-   $ docker node ls
+      $ docker node ls
 
-   ID                           HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
-   dxn1zf6l61qsb1josjja83ngz *  manager1  Ready   Active        Leader
+      ID                           HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
+      dxn1zf6l61qsb1josjja83ngz *  manager1  Ready   Active        Leader
 
 
-..    The `*` next to the node ID indicates that you're currently connected on
+   .. The `*` next to the node ID indicates that you're currently connected on
       this node.
 
    ノード ID の横にある ``*`` 印は、現在接続中のノードを表します。
 
-..    Docker Engine swarm mode automatically names the node for the machine host
+   .. Docker Engine swarm mode automatically names the node for the machine host
       name. The tutorial covers other columns in later steps.
 
-Docker Engine swarm モードはノードに対して、マシンのホスト名を自動的に付けます。他の列については、後半のステップで扱います。
+   Docker Engine swarm モードはノードに対して、マシンのホスト名を自動的に付けます。他の列については、後半のステップで扱います。
 
 .. What's next?
 
