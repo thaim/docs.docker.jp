@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    working_directory: /mnt
+    docker:
+      - image: docsdockerjp/latex
+    steps:
+      - checkout
+      - run:
+          name: build html
+          command: make -f Makefile.docker clean html
