@@ -26,7 +26,7 @@ Swarm モード概要
 
 Docker を swarm モードで使うには、 Docker をインストールします。
 すべてのオペレーティングシステムとプラットフォームについて
-:doc:`インストール手順 </install/>` を見てください。
+:doc:`インストール手順 </install/index>` を見てください。
 
 .. Current versions of Docker include *swarm mode* for natively managing a cluster
    of Docker Engines called a *swarm*. Use the Docker CLI to create a swarm, deploy

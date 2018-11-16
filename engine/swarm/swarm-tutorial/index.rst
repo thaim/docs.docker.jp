@@ -144,7 +144,7 @@ Linux マシンに Docker Engine をインストールする
    single-node and multi-node swarm scenarios on Linux machines.
 
 もし Linux ベースの物理計算機またはクラウドプロバイダが提供する計算機をホストに利用しているのであれば
-プラットフォームに応じた :doc:`Linux インストール手順 <../../installation/index.rst>` に従って下さい。
+プラットフォームに応じた :doc:`Linux インストール手順 <../../installation/index>` に従って下さい。
 3つの計算機を登録することで準備が完了します。
 Linux 計算機であれば swarm のシングルノードとマルチノードの両方を
 試すことができます。
@@ -161,8 +161,8 @@ Docker for Mac や Docker for Windows を利用する
    computer. You can test both single-node and multi-node swarm from this computer,
    but you need to use Docker Machine to test the multi-node scenarios.
 
-これ以外の方法として、最新の :doc:`Docker for Mac </docker-for-mac/index.rst>` や
-:doc:`Docker for Windows </docker-for-windows/index.rst>` アプリケーションを
+これ以外の方法として、最新の :doc:`Docker for Mac </docker-for-mac/index>` や
+:doc:`Docker for Windows </docker-for-windows/index>` アプリケーションを
 1台の計算機にインストールしてください。
 その計算機にてシングルノードとマルチノードの swarm を試すことができます。
 ただしマルチノードシナリオを試すには Docker Machine を利用する必要があります。
@@ -188,8 +188,8 @@ Docker for Mac や Docker for Windows を利用する
    Docker for Mac or Docker for Windows running.
 
 * 現在では、 Docker for Mac や Docker for Windows のみで *マルチノード* swarm を
-  試すことはできません。しかし、同時にインストールされる :doc:`Docker Machine </machine/overview.rst>`
-  を利用することで swarm ノード群(:doc:`Docker Machine をローカル VM で始めるには </machine/get-started.rst>` を参照)を作成し、
+  試すことはできません。しかし、同時にインストールされる :doc:`Docker Machine </machine/overview>`
+  を利用することで swarm ノード群(:doc:`Docker Machine をローカル VM で始めるには </machine/get-started>` を参照)を作成し、
   すべてのマルチノードに関する機能を試すチュートリアルをすすめることができます。
   このシナリオでは Docker for Mac や Docker for Windows からコマンドを実行しますが、
   その Docker ホスト自体は swarm に参加して *いません* 。ノード群を作成した後は、

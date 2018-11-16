@@ -18,7 +18,7 @@ Docker Swarm で Swarm という名前の Docker Engine のクラスタを作成
 このセクションは以下のトピックを扱います：
 
 * :doc:`Docker Swarm 概要 <index>`
-* :doc:`Docker Swarm の重要な概念 <key-concept>`
+* :doc:`Docker Swarm の重要な概念 <key-concepts>`
 * :doc:`Docker Swarm 導入ガイド <swarm-tutorial/index>`
 
 .. seealso:: 

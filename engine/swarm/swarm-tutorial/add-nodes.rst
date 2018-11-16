@@ -24,7 +24,7 @@ swarm に他のノードを追加
 .. Once you've [created a swarm](create-swarm.md) with a manager node, you're ready
    to add worker nodes.
 
-マネージャ・ノードで :doc:`swarm を作成 <./create-swarm.rst>` した後は、ワーカ・ノードを追加できる状態です。
+マネージャ・ノードで :doc:`swarm を作成 <create-swarm>` した後は、ワーカ・ノードを追加できる状態です。
 
 .. 1.  Open a terminal and ssh into the machine where you want to run a worker node.
        This tutorial uses the name `worker1`.
@@ -36,7 +36,7 @@ swarm に他のノードを追加
        joined to the existing swarm:
 
 2. 既存の swarm に参加するワーカ・ノードを作成するには、
-   :doc:`swarm の作成 <create-swarm.rst>` チュートリアルステップで実行した
+   :doc:`swarm の作成 <create-swarm>` チュートリアルステップで実行した
    ``docker swarm init`` コマンドの出力により生成されたコマンドを実行します：
 
 ..     ```bash
@@ -89,7 +89,7 @@ swarm に他のノードを追加
        node joined to the existing swarm:
 
 4. 既存の swarm に参加するワーカ・ノードを作成するには、
-   :doc:`swarm の作成 <./create-swarm.rst>` チュートリアルステップで実行した
+   :doc:`swarm の作成 <create-swarm>` チュートリアルステップで実行した
    ``docker swarm init`` コマンドの出力により生成されたコマンドを実行します：
 
 ..     ```bash

@@ -121,7 +121,7 @@ Docker swarm サービスに関連するコンセプトとしてノードやサ�
    **manager node**. The manager node dispatches units of work called
    [tasks](#services-and-tasks) to worker nodes.
 
-アプリケーションを swarm にデプロイするには、 **マネージャ・ノード（manager node）** にサービス定義を送信します。マネージャ・ノードはワーカー・ノードへ :ref:`タスク <swarm-concept-services-and-tasks>` と呼ばれる単位を送ります（ディスパッチします）。
+アプリケーションを swarm にデプロイするには、 **マネージャ・ノード（manager node）** にサービス定義を送信します。マネージャ・ノードはワーカー・ノードへ :ref:`タスク <swarm-concepts-services-and-tasks>` と呼ばれる単位を送ります（ディスパッチします）。
 
 .. Manager nodes also perform the orchestration and cluster management functions
    required to maintain the desired state of the swarm. Manager nodes elect a
